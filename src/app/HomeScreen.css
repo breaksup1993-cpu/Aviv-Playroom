@@ -42,9 +42,9 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: clamp(1rem, 4vw, 1.75rem);
-  width: 88%;
-  max-width: 640px;
+  gap: clamp(1.1rem, 4.3vw, 1.9rem);
+  width: 80%;
+  max-width: 580px;
   margin: 0 auto;
 }
 

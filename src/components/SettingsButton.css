@@ -1,9 +1,9 @@
 .settings-button {
   position: absolute;
-  top: clamp(0.25rem, 1.5vh, 0.75rem);
-  right: clamp(0.25rem, 2vw, 0.75rem);
-  width: clamp(44px, 11vw, 52px);
-  height: clamp(44px, 11vw, 52px);
+  top: clamp(0.1rem, 0.8vh, 0.4rem);
+  right: clamp(0.1rem, 1vw, 0.4rem);
+  width: clamp(50px, 13vw, 60px);
+  height: clamp(50px, 13vw, 60px);
   display: flex;
   align-items: center;
   justify-content: center;
