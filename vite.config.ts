@@ -16,7 +16,6 @@ export default defineConfig({
         start_url: '/',
         scope: '/',
         display: 'standalone',
-        orientation: 'portrait',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         icons: [
@@ -40,7 +39,10 @@ export default defineConfig({
       },
       workbox: {
         // Cache the app shell so it can load fully offline after first visit.
-        globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+        // Includes future game asset formats (images + audio) up front.
+        globPatterns: [
+          '**/*.{js,css,html,svg,png,ico,webp,avif,mp3,m4a,wav,ogg}',
+        ],
       },
       devOptions: {
         enabled: false,
