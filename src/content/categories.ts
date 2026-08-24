@@ -26,11 +26,9 @@ export const categories: Category[] = [
     colorText: '#8A6A1B',
   },
   {
-    // Sports illustration still pending a transparent-background asset —
-    // keeping the original SVG placeholder for this one category only.
     id: 'sports',
     nameHe: 'ספורט',
-    image: '/assets/images/categories/sports.svg',
+    image: '/assets/images/home/category-sports.png',
     colorBg: 'rgba(255, 226, 209, 0.85)',
     colorText: '#B14A24',
   },
