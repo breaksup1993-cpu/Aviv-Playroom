@@ -10,14 +10,16 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'Aviv Playroom',
-        short_name: 'Aviv Playroom',
-        description: 'Aviv Playroom — a mobile-first playroom of educational mini-games.',
+        name: 'המשחקייה של אביב',
+        short_name: 'המשחקייה של אביב',
+        description: 'המשחקייה של אביב — משחקייה חינוכית לפעוטות, בגישת Mobile-First.',
+        lang: 'he',
+        dir: 'rtl',
         start_url: '/',
         scope: '/',
         display: 'standalone',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
+        background_color: '#eaf6ff',
+        theme_color: '#eaf6ff',
         icons: [
           {
             src: '/icons/icon-192.png',

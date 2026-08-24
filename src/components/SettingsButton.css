@@ -1,0 +1,21 @@
+.settings-button {
+  position: absolute;
+  top: clamp(0.25rem, 1.5vh, 0.75rem);
+  right: clamp(0.25rem, 2vw, 0.75rem);
+  width: clamp(40px, 10vw, 48px);
+  height: clamp(40px, 10vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  background: #0f3b57;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.settings-button:active {
+  transform: scale(0.94);
+}

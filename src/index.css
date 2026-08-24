@@ -1,15 +1,8 @@
 :root {
-  --bg: #ffffff;
+  --bg: #eaf6ff;
   --text: #1a1a1a;
-  color-scheme: light dark;
+  color-scheme: light;
   font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #121212;
-    --text: #f2f2f2;
-  }
 }
 
 * {

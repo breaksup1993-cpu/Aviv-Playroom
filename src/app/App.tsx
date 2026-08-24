@@ -1,11 +1,7 @@
-import './App.css'
+import HomeScreen from './HomeScreen'
 
 function App() {
-  return (
-    <main className="app-shell">
-      <h1>Aviv Playroom</h1>
-    </main>
-  )
+  return <HomeScreen />
 }
 
 export default App
