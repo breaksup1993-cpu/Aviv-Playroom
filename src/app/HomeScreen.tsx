@@ -8,12 +8,11 @@ function HomeScreen() {
     <div className="home-screen">
       <header className="home-screen__header">
         <h1 className="home-screen__title">
-          <span className="home-screen__title-part home-screen__title-part--blue">
-            המשחקייה
-          </span>{' '}
-          <span className="home-screen__title-part home-screen__title-part--coral">
-            של אביב
-          </span>
+          <img
+            className="home-screen__logo"
+            src="/assets/images/home/logo-title.webp"
+            alt="המשחקייה של אביב"
+          />
         </h1>
         <SettingsButton />
       </header>

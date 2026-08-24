@@ -20,27 +20,14 @@
 
 .home-screen__title {
   margin: 0;
-  font-family: 'Rubik', system-ui, sans-serif;
-  font-size: clamp(1.5rem, 6.5vw, 2.75rem);
-  font-weight: 800;
-  text-align: center;
-  line-height: 1.2;
+  display: flex;
+  justify-content: center;
 }
 
-.home-screen__title-part {
-  -webkit-text-stroke: 0.035em rgba(255, 250, 240, 0.9);
-  paint-order: stroke fill;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.55),
-    0 4px 10px rgba(0, 0, 0, 0.18);
-}
-
-.home-screen__title-part--blue {
-  color: #1c5b8c;
-}
-
-.home-screen__title-part--coral {
-  color: #e0672f;
+.home-screen__logo {
+  width: clamp(180px, 52vw, 360px);
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18));
 }
 
 .home-screen__content {
@@ -73,8 +60,8 @@
     padding-bottom: 0.25rem;
   }
 
-  .home-screen__title {
-    font-size: clamp(1.05rem, 4.5vh, 1.6rem);
+  .home-screen__logo {
+    width: clamp(120px, 34vh, 220px);
   }
 
   .home-screen__grid {

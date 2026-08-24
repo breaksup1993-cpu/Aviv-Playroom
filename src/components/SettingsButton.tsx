@@ -4,7 +4,7 @@ import './SettingsButton.css'
 function SettingsButton() {
   return (
     <button type="button" className="settings-button" aria-label="הגדרות">
-      <img src="/assets/images/home/settings.png" alt="" />
+      <img src="/assets/images/home/settings.webp" alt="" />
     </button>
   )
 }
