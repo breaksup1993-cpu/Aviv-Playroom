@@ -20,17 +20,18 @@
 
 .home-screen__title {
   margin: 0;
-  font-size: clamp(1.4rem, 6vw, 2.6rem);
+  font-family: 'Rubik', system-ui, sans-serif;
+  font-size: clamp(1.5rem, 6.5vw, 2.75rem);
   font-weight: 800;
   text-align: center;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .home-screen__title-part {
-  -webkit-text-stroke: 0.03em rgba(255, 250, 240, 0.85);
+  -webkit-text-stroke: 0.035em rgba(255, 250, 240, 0.9);
   paint-order: stroke fill;
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.55),
     0 4px 10px rgba(0, 0, 0, 0.18);
 }
 
@@ -54,9 +55,9 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: clamp(0.75rem, 3vw, 1.5rem);
-  width: 100%;
-  max-width: 720px;
+  gap: clamp(1rem, 4vw, 1.75rem);
+  width: 88%;
+  max-width: 640px;
   margin: 0 auto;
 }
 
