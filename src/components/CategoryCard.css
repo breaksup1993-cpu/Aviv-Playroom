@@ -11,11 +11,13 @@
   border: none;
   border-radius: clamp(20px, 4vw, 32px);
   background: var(--card-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: inherit;
   font: inherit;
   box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.08),
-    0 2px 6px rgba(0, 0, 0, 0.06);
+    0 10px 24px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
   -webkit-tap-highlight-color: transparent;
@@ -45,4 +47,21 @@
   font-weight: 700;
   color: var(--card-text);
   text-align: center;
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .category-card {
+    min-height: 0;
+    gap: clamp(0.25rem, 1.5vh, 0.6rem);
+    padding: clamp(0.5rem, 2vh, 1rem);
+  }
+
+  .category-card__visual {
+    width: clamp(40px, 12vh, 76px);
+    height: clamp(40px, 12vh, 76px);
+  }
+
+  .category-card__label {
+    font-size: clamp(0.8rem, 3vh, 1.15rem);
+  }
 }

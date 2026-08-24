@@ -2,7 +2,10 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #eaf6ff 0%, #fdf8ef 55%, #fdf8ef 100%);
+  background-image: url('/assets/images/home/playroom-background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   padding: max(env(safe-area-inset-top), 0.75rem)
     max(env(safe-area-inset-right), 1rem) max(env(safe-area-inset-bottom), 1rem)
     max(env(safe-area-inset-left), 1rem);
@@ -11,27 +14,32 @@
 
 .home-screen__header {
   position: relative;
-  padding-block: clamp(0.5rem, 2vh, 1.25rem);
+  padding-top: clamp(2.75rem, 11vh, 5rem);
+  padding-bottom: clamp(0.5rem, 2vh, 1.25rem);
 }
 
 .home-screen__title {
   margin: 0;
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(1.4rem, 6vw, 2.6rem);
   font-weight: 800;
-  color: #1f4e79;
   text-align: center;
-  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.6);
+  line-height: 1.15;
 }
 
-.home-screen__playroom {
-  flex: 0 0 auto;
-  height: clamp(50px, 12vh, 140px);
-  margin: clamp(0.5rem, 2vh, 1rem) 0;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at 15% 30%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 40%),
-    radial-gradient(circle at 85% 70%, rgba(255, 214, 153, 0.35) 0%, rgba(255, 214, 153, 0) 45%),
-    linear-gradient(160deg, #bfe3ff 0%, #d7f2e6 100%);
+.home-screen__title-part {
+  -webkit-text-stroke: 0.03em rgba(255, 250, 240, 0.85);
+  paint-order: stroke fill;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.home-screen__title-part--blue {
+  color: #1c5b8c;
+}
+
+.home-screen__title-part--coral {
+  color: #e0672f;
 }
 
 .home-screen__content {
@@ -53,11 +61,42 @@
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
-  .home-screen__playroom {
-    display: none;
+  .home-screen {
+    /* Source art is portrait; on short/wide screens bias the crop toward
+       the rug so the area under the cards stays the room's focal point. */
+    background-position: center 70%;
+  }
+
+  .home-screen__header {
+    padding-top: clamp(0.75rem, 4vh, 1.5rem);
+    padding-bottom: 0.25rem;
+  }
+
+  .home-screen__title {
+    font-size: clamp(1.05rem, 4.5vh, 1.6rem);
   }
 
   .home-screen__grid {
-    max-width: 640px;
+    /* A single row makes better use of a short, wide viewport than 2x2. */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    max-width: 100%;
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+}
+
+@media (min-width: 700px) and (orientation: portrait) {
+  .home-screen {
+    /* Taller/wider canvas than a phone (e.g. iPad) — nudge the crop up
+       slightly so furniture and rug both stay in frame. */
+    background-position: center 20%;
+  }
+}
+
+@media (orientation: landscape) and (min-height: 501px) {
+  .home-screen {
+    /* Wide tablet landscape — keep the clear sky band (for the title)
+       and the top of the rug in frame instead of centering on the shelf. */
+    background-position: center 12%;
   }
 }

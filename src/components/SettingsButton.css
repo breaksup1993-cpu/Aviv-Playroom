@@ -2,18 +2,23 @@
   position: absolute;
   top: clamp(0.25rem, 1.5vh, 0.75rem);
   right: clamp(0.25rem, 2vw, 0.75rem);
-  width: clamp(40px, 10vw, 48px);
-  height: clamp(40px, 10vw, 48px);
+  width: clamp(44px, 11vw, 52px);
+  height: clamp(44px, 11vw, 52px);
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 999px;
-  background: #0f3b57;
-  color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background: transparent;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+}
+
+.settings-button img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
 .settings-button:active {

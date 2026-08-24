@@ -7,11 +7,16 @@ function HomeScreen() {
   return (
     <div className="home-screen">
       <header className="home-screen__header">
-        <h1 className="home-screen__title">המשחקייה של אביב</h1>
+        <h1 className="home-screen__title">
+          <span className="home-screen__title-part home-screen__title-part--blue">
+            המשחקייה
+          </span>{' '}
+          <span className="home-screen__title-part home-screen__title-part--coral">
+            של אביב
+          </span>
+        </h1>
         <SettingsButton />
       </header>
-
-      <div className="home-screen__playroom" aria-hidden="true" />
 
       <main className="home-screen__content">
         <div className="home-screen__grid">

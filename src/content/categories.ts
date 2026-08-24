@@ -7,29 +7,31 @@ export const categories: Category[] = [
   {
     id: 'numbers',
     nameHe: 'מספרים',
-    image: '/assets/images/categories/numbers.svg',
-    colorBg: '#DCEEFC',
+    image: '/assets/images/home/category-numbers.png',
+    colorBg: 'rgba(214, 237, 255, 0.82)',
     colorText: '#1F4E79',
   },
   {
     id: 'transportation',
     nameHe: 'תחבורה',
-    image: '/assets/images/categories/transportation.svg',
-    colorBg: '#DFF4EC',
+    image: '/assets/images/home/category-transportation.png',
+    colorBg: 'rgba(214, 244, 230, 0.82)',
     colorText: '#1F6B52',
   },
   {
     id: 'fruits-vegetables',
     nameHe: 'פירות וירקות',
-    image: '/assets/images/categories/fruits-vegetables.svg',
-    colorBg: '#FDF3D9',
+    image: '/assets/images/home/category-fruits-vegetables.png',
+    colorBg: 'rgba(255, 241, 214, 0.85)',
     colorText: '#8A6A1B',
   },
   {
+    // Sports illustration still pending a transparent-background asset —
+    // keeping the original SVG placeholder for this one category only.
     id: 'sports',
     nameHe: 'ספורט',
     image: '/assets/images/categories/sports.svg',
-    colorBg: '#FBE4D4',
+    colorBg: 'rgba(255, 226, 209, 0.85)',
     colorText: '#B14A24',
   },
 ]
