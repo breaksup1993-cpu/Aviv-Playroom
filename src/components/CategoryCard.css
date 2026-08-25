@@ -82,3 +82,37 @@
     font-size: clamp(0.62rem, 2.1vh, 0.85rem);
   }
 }
+
+/* iPhone portrait only (tablets keep the square 1/1 tile above) */
+@media (max-width: 699px) and (orientation: portrait) {
+  .category-tile {
+    /* A bit taller than square so the belly has proper room for both the
+       illustration (top-center) and the label (bottom), without cramping.
+       Note: since the cloud image itself is wider than tall, object-fit:
+       contain letterboxes it within this taller box (~12% empty margin
+       top and bottom) — the content padding below is sized to clear that
+       margin so nothing spills outside the visible cloud shape. */
+    aspect-ratio: 1 / 1.12;
+  }
+
+  .category-tile__content {
+    padding-top: 17%;
+    padding-bottom: 16%;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .category-tile__image {
+    width: clamp(58px, 20vw, 112px);
+    height: clamp(58px, 20vw, 112px);
+  }
+
+  .category-tile[data-category='transportation'] .category-tile__image {
+    width: clamp(68px, 23vw, 132px);
+    height: clamp(68px, 23vw, 132px);
+  }
+
+  .category-tile__label {
+    font-size: clamp(0.85rem, 2.9vw, 1.1rem);
+  }
+}
