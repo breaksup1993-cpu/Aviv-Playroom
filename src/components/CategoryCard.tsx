@@ -19,10 +19,8 @@ function CategoryCard({ category }: CategoryCardProps) {
       style={style}
     >
       <img className="category-tile__cloud" src={category.cloud} alt="" aria-hidden="true" />
-      <span className="category-tile__content">
-        <img className="category-tile__image" src={category.image} alt="" />
-        <span className="category-tile__label">{category.nameHe}</span>
-      </span>
+      <img className="category-tile__image" src={category.image} alt="" />
+      <span className="category-tile__label">{category.nameHe}</span>
     </button>
   )
 }

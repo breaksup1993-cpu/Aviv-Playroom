@@ -2,8 +2,16 @@
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  padding: 0;
+  height: 0;
+  /* Cross-browser aspect-ratio hack (percentage padding resolves against
+     width) instead of the `aspect-ratio` property, in case a WebKit/Safari
+     combination of aspect-ratio + CSS Grid auto rows renders inconsistently
+     across the 4 grid cells. Every tile uses this same rule, so all 4
+     clouds are guaranteed an identical box size. */
+  padding-top: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
   border: none;
   background: transparent;
   color: inherit;
@@ -27,19 +35,11 @@
   pointer-events: none;
 }
 
-.category-tile__content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* Push content down into the cloud's flat "belly", clear of its bumpy top. */
-  padding-top: 15%;
-  gap: clamp(0.15rem, 1vw, 0.4rem);
-}
-
 .category-tile__image {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
   width: clamp(52px, 17vw, 96px);
   height: clamp(52px, 17vw, 96px);
   object-fit: contain;
@@ -48,27 +48,29 @@
 
 /* The transportation illustration is a wide/short composition, so at the
    same box size it reads visually smaller than the square illustrations —
-   give it a modest boost so all four feel similarly sized. */
+   give it a modest boost so all four feel similarly sized. Only its size
+   changes here; position and every other tile stay identical. */
 .category-tile[data-category='transportation'] .category-tile__image {
   width: clamp(60px, 20vw, 112px);
   height: clamp(60px, 20vw, 112px);
 }
 
 .category-tile__label {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Rubik', system-ui, sans-serif;
   font-size: clamp(0.8rem, 2.6vw, 1.05rem);
   font-weight: 700;
   color: var(--label-text);
   text-align: center;
+  white-space: nowrap;
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
-  .category-tile__content {
-    padding-top: 13%;
-    gap: 0.15rem;
-  }
-
   .category-tile__image {
+    top: 11%;
     width: clamp(38px, 10vh, 68px);
     height: clamp(38px, 10vh, 68px);
   }
@@ -79,40 +81,36 @@
   }
 
   .category-tile__label {
+    bottom: 9%;
     font-size: clamp(0.62rem, 2.1vh, 0.85rem);
   }
 }
 
-/* iPhone portrait only (tablets keep the square 1/1 tile above) */
+/* iPhone portrait only (tablets keep the rules above) */
 @media (max-width: 699px) and (orientation: portrait) {
   .category-tile {
     /* A bit taller than square so the belly has proper room for both the
        illustration (top-center) and the label (bottom), without cramping.
        Note: since the cloud image itself is wider than tall, object-fit:
        contain letterboxes it within this taller box (~12% empty margin
-       top and bottom) — the content padding below is sized to clear that
-       margin so nothing spills outside the visible cloud shape. */
-    aspect-ratio: 1 / 1.12;
-  }
-
-  .category-tile__content {
-    padding-top: 17%;
-    padding-bottom: 16%;
-    justify-content: space-between;
-    gap: 0;
+       top and bottom) — the top/bottom offsets below clear that margin
+       with a safety buffer so nothing spills outside the visible cloud. */
+    padding-top: 112%;
   }
 
   .category-tile__image {
-    width: clamp(58px, 20vw, 112px);
-    height: clamp(58px, 20vw, 112px);
+    top: 17%;
+    width: clamp(60px, 21vw, 118px);
+    height: clamp(60px, 21vw, 118px);
   }
 
   .category-tile[data-category='transportation'] .category-tile__image {
-    width: clamp(68px, 23vw, 132px);
-    height: clamp(68px, 23vw, 132px);
+    width: clamp(70px, 24vw, 138px);
+    height: clamp(70px, 24vw, 138px);
   }
 
   .category-tile__label {
-    font-size: clamp(0.85rem, 2.9vw, 1.1rem);
+    bottom: 16%;
+    font-size: clamp(0.85rem, 2.9vw, 1.15rem);
   }
 }

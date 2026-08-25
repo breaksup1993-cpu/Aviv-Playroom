@@ -24,3 +24,14 @@
 .settings-button:active {
   transform: scale(0.94);
 }
+
+/* iPhone portrait only: a small inset (instead of flush 0/0) so the button
+   reliably clears the ceiling lamp regardless of exact device aspect. */
+@media (max-width: 699px) and (orientation: portrait) {
+  .settings-button {
+    top: clamp(0.3rem, 1vh, 0.6rem);
+    right: clamp(0.3rem, 1.2vw, 0.6rem);
+    width: clamp(50px, 13vw, 62px);
+    height: clamp(50px, 13vw, 62px);
+  }
+}

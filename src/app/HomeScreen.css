@@ -117,12 +117,13 @@
 /* iPhone portrait only (tablets have their own tuned rules above) */
 @media (max-width: 699px) and (orientation: portrait) {
   .home-screen__grid {
-    width: 87%;
-    max-width: 620px;
+    width: 90%;
+    max-width: 650px;
   }
 
   .home-screen__content {
-    /* Sit the (now taller) cards a touch lower so all 4 stay on the rug. */
-    padding-bottom: clamp(1rem, 5vh, 2.5rem);
+    /* Sit the (now taller) cards lower so all 4 stay clear of the shelf
+       and land fully on the rug. */
+    padding-bottom: clamp(0.5rem, 3.5vh, 1.75rem);
   }
 }
