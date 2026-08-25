@@ -8,16 +8,21 @@ interface CategoryCardProps {
 
 function CategoryCard({ category }: CategoryCardProps) {
   const style = {
-    '--card-bg': category.colorBg,
-    '--card-text': category.colorText,
+    '--label-text': category.colorText,
   } as CSSProperties
 
   return (
-    <button type="button" className="category-card" style={style}>
-      <span className="category-card__visual">
-        <img src={category.image} alt="" />
+    <button
+      type="button"
+      className="category-tile"
+      data-category={category.id}
+      style={style}
+    >
+      <img className="category-tile__cloud" src={category.cloud} alt="" aria-hidden="true" />
+      <span className="category-tile__content">
+        <img className="category-tile__image" src={category.image} alt="" />
+        <span className="category-tile__label">{category.nameHe}</span>
       </span>
-      <span className="category-card__label">{category.nameHe}</span>
     </button>
   )
 }
