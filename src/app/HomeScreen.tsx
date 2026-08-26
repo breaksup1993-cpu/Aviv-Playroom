@@ -1,9 +1,23 @@
+import { useState } from 'react'
 import CategoryCard from '../components/CategoryCard'
 import SettingsButton from '../components/SettingsButton'
 import { categories } from '../content/categories'
+import type { Category } from '../types/category'
+import CategoryScreen from './CategoryScreen'
 import './HomeScreen.css'
 
 function HomeScreen() {
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
+
+  if (selectedCategory) {
+    return (
+      <CategoryScreen
+        category={selectedCategory}
+        onBack={() => setSelectedCategory(null)}
+      />
+    )
+  }
+
   return (
     <div className="home-screen">
       <header className="home-screen__header">
@@ -20,7 +34,11 @@ function HomeScreen() {
       <main className="home-screen__content">
         <div className="home-screen__grid">
           {categories.map((category) => (
-            <CategoryCard key={category.id} category={category} />
+            <CategoryCard
+              key={category.id}
+              category={category}
+              onSelect={setSelectedCategory}
+            />
           ))}
         </div>
       </main>

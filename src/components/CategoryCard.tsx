@@ -4,9 +4,10 @@ import './CategoryCard.css'
 
 interface CategoryCardProps {
   category: Category
+  onSelect: (category: Category) => void
 }
 
-function CategoryCard({ category }: CategoryCardProps) {
+function CategoryCard({ category, onSelect }: CategoryCardProps) {
   const style = {
     '--label-text': category.colorText,
   } as CSSProperties
@@ -17,6 +18,7 @@ function CategoryCard({ category }: CategoryCardProps) {
       className="category-tile"
       data-category={category.id}
       style={style}
+      onClick={() => onSelect(category)}
     >
       <img className="category-tile__cloud" src={category.cloud} alt="" aria-hidden="true" />
       <img className="category-tile__image" src={category.image} alt="" />

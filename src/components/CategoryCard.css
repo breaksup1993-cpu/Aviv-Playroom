@@ -89,28 +89,35 @@
 /* iPhone portrait only (tablets keep the rules above) */
 @media (max-width: 699px) and (orientation: portrait) {
   .category-tile {
-    /* A bit taller than square so the belly has proper room for both the
-       illustration (top-center) and the label (bottom), without cramping.
-       Note: since the cloud image itself is wider than tall, object-fit:
-       contain letterboxes it within this taller box (~12% empty margin
-       top and bottom) — the top/bottom offsets below clear that margin
-       with a safety buffer so nothing spills outside the visible cloud. */
-    padding-top: 112%;
+    padding-top: 84%;
   }
 
   .category-tile__image {
     top: 17%;
-    width: clamp(60px, 21vw, 118px);
-    height: clamp(60px, 21vw, 118px);
+    width: clamp(52px, 17vw, 94px);
+    height: clamp(52px, 17vw, 94px);
   }
 
   .category-tile[data-category='transportation'] .category-tile__image {
-    width: clamp(70px, 24vw, 138px);
-    height: clamp(70px, 24vw, 138px);
+    width: clamp(60px, 20vw, 108px);
+    height: clamp(60px, 20vw, 108px);
   }
 
   .category-tile__label {
-    bottom: 16%;
-    font-size: clamp(0.85rem, 2.9vw, 1.15rem);
+    bottom: 23%;
+    font-size: clamp(0.76rem, 2.5vw, 1rem);
+  }
+
+  .category-tile[data-category='numbers'] .category-tile__image {
+    top: 21%;
+  }
+
+  .category-tile[data-category='transportation'] .category-tile__image {
+    transform: translateX(calc(-50% - 4px));
+  }
+
+  .category-tile[data-category='sports'] .category-tile__image {
+    top: 21%;
+    transform: translateX(calc(-50% - 4px));
   }
 }
